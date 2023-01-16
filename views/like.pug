@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    section.hero.is-info.is-fullheight(style="background-image: url(/images/background_etho.jpg)")
+        .hero-body
+            .row
+                .container.has-text-centered
+                    .col-12
+                        h1.text-light
+                            | Receive #{faucetAmount} #{faucetCurrency}
+                        h4.text-light Step 3: Follow us
+            .row
+                .col-4
+                .col-4
+                    .card
+                        img.card-img-top(src="/images/follow.png", alt="3 steps to ETHO")
+                        .card-body.text-dark
+                            .form-group
+                                form(method='POST', action='/start/3')
+                                    input#inputId.form-control(name="ethoaddr", value=`${ethoaddr}` hidden)
+                                    input#inputId.form-control(name="tweetid", value=`${tweetid}` hidden)
+                                    if (follow)
+                                        p Great you follow us already
+                                        button#submitbtn.btn.btn-primary(type="submit") Claim your ETHO
+                                    else
+                                        p Now just follow Etho Protocol.
+                                        span#container-twitter
+                                            a.twitter-follow-button(href="https://twitter.com/ethoprotocol", data-size="large")
+                                                | Follow @EthoProtocol
+                                            script(async, src="https://platform.twitter.com/widgets.js", charset="utf-8")
+
+                                        p Followed all steps?
+                                        button#submitbtn.btn.btn-primary(type="submit") Claim your ETHO
+                .col-4
+
+
+

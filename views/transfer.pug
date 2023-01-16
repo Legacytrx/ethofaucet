@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    section.hero.is-info.is-fullheight(style="background-image: url(/images/background_etho.jpg)")
+        .hero-body
+            .row
+                .container.has-text-centered
+                    .col-12
+                        h1.text-light
+                            | Receive #{faucetAmount} #{faucetCurrency}
+                        h4.text-light Done
+            .row.m-5
+                .col-4
+                .col-4
+                    .card
+                        img.card-img-top(src="/images/flag.png", alt="3 steps to ETHO")
+                        .card-body.text-dark
+                            .form-group
+                                form(method='POST', action='/start/4')
+                                    p This is the TX:
+                                        |  #{tx}
+                                    a.btn.btn-primary(href=`${explorerurl}` role="button") Verify transaction
+                .col-4
+
+

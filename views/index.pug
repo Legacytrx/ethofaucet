@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  section.hero.is-info.is-fullheight(style="background-image: url(/images/background_etho.jpg)")
+    .hero-body
+      .container
+        .row
+          .container.m-2.has-text-centered
+            .col-12.is-centered.text-light
+              h1.text-light Receive #{faucetAmount} #{faucetCurrency}
+              h4.text-light
+                | Serving from
+              p #{faucetAddress}
+              | (#{faucetBalance} #{faucetCurrency} available)
+        .row
+          .col-4
+          .col-4
+            .card
+              img.card-img-top(src="/images/card.png", alt="3 steps to ETHO")
+              .card-body.text-dark Get ETHO in 2 minutes
+                p.card-text.text-dark Tweet and follow us to get free ETHO
+                a.btn.btn-primary(href="/start/1") Start
+          .col-4

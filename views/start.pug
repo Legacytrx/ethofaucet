@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    section.hero.is-info.is-fullheight(style="background-image: url(/images/background_etho.jpg)")
+        .hero-body
+            .container
+                .row
+                    .container.m-2.has-text-centered
+                        .col-12.is-centered.text-light
+                            h1.text-light Receive #{faucetAmount} #{faucetCurrency}
+                            h4.text-light Step 1: Enter your ETHO or Ethereum address below
+                .row
+                    .col-4
+                    .col-4
+                        .card
+                            img.card-img-top(src="/images/address.png", alt="3 steps to ETHO")
+                            .card-body.text-dark Enter your address
+                                p.card-text.text-dark.p-2
+                                    form(method='POST', action='/start/1')
+                                        .form-group
+                                            input#inputETHO.form-control(name="ethoaddr", value=`${address}`)
+                                        .d-grid.gap-2.d-md-flex-justify-content-md-end
+                                            button#submitbtn.btn.btn-primary(type="submit") Confirm your ETHO address
+
+                    .col-4
